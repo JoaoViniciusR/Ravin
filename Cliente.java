@@ -5,7 +5,7 @@ public class Cliente extends Pessoa {
     private String alergia;
     private boolean vip;
 
-    public Cliente(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, String alergia, boolean vip) {
+    public Cliente(int id, String nome, String telefone, String dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, String alergia, boolean vip) {
         super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, observacao, status);
         this.alergia = alergia;
         this.vip = vip;

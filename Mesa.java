@@ -21,6 +21,8 @@ public class Mesa {
         this.comandas = comandas;
     }
 
+    public Mesa(){}
+
     public int getId() {
         return id;
     }

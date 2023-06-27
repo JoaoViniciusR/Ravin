@@ -5,7 +5,7 @@ public class Pessoa{
     private int id;
     private String nome;
     private String telefone;
-    private Date dataNascimento;
+    private String dataNascimento;
     private String cpf;
     private String rg;
     private EstadoCivil estadoCivil;
@@ -13,7 +13,7 @@ public class Pessoa{
     private boolean status;
 
 
-    public Pessoa(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status) {
+    public Pessoa(int id, String nome, String telefone, String dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -50,11 +50,11 @@ public class Pessoa{
         this.telefone = telefone;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

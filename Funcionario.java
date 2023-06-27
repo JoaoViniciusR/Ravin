@@ -5,11 +5,11 @@ public class Funcionario extends Pessoa{
     private Escolaridade escolaridade;
     private Cargo cargo;
     private String numeroCarteiraT;
-    private Date dataAdmissao;
-    private Date dataDemissao;
+    private String dataAdmissao;
+    private String dataDemissao;
     private Disponibilidade disponibilidade;
 
-    public Funcionario(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, Escolaridade escolaridade, Cargo cargo, String numeroCarteiraT, Date dataAdmissao, Date dataDemissao, Disponibilidade disponibilidade) {
+    public Funcionario(int id, String nome, String telefone, String dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, Escolaridade escolaridade, Cargo cargo, String numeroCarteiraT, String dataAdmissao, String dataDemissao, Disponibilidade disponibilidade) {
         super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, observacao, status);
         this.escolaridade = escolaridade;
         this.cargo = cargo;
@@ -18,6 +18,8 @@ public class Funcionario extends Pessoa{
         this.dataDemissao = dataDemissao;
         this.disponibilidade = disponibilidade;
     }
+
+    public Funcionario(){}
 
     public Escolaridade getEscolaridade() {
         return escolaridade;
@@ -43,19 +45,19 @@ public class Funcionario extends Pessoa{
         this.numeroCarteiraT = numeroCarteiraT;
     }
 
-    public Date getDataAdmissao() {
+    public String getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(Date dataAdmissao) {
+    public void setDataAdmissao(String dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 
-    public Date getDataDemissao() {
+    public String getDataDemissao() {
         return dataDemissao;
     }
 
-    public void setDataDemissao(Date dataDemissao) {
+    public void setDataDemissao(String dataDemissao) {
         this.dataDemissao = dataDemissao;
     }
 

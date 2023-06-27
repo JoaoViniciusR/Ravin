@@ -1,4 +1,5 @@
-import java.security.Timestamp;
+//import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.sql.Date;
 
 public class Produto {
@@ -25,6 +26,7 @@ public class Produto {
         this.tipoProduto = tipoProduto;
         this.status = status;
     }
+    public Produto(){}
 
     public int getId() {
         return id;
