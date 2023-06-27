@@ -8,10 +8,12 @@ public class Pessoa{
     private Date dataNascimento;
     private String cpf;
     private String rg;
-    private String estadoCivil;
+    private EstadoCivil estadoCivil;
+    private String observacao;
     private boolean status;
 
-    public Pessoa(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, String estadoCivil, boolean status){
+
+    public Pessoa(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -19,8 +21,10 @@ public class Pessoa{
         this.cpf = cpf;
         this.rg = rg;
         this.estadoCivil = estadoCivil;
+        this.observacao = observacao;
         this.status = status;
     }
+    public Pessoa(){}
 
     public int getId() {
         return id;
@@ -70,11 +74,11 @@ public class Pessoa{
         this.rg = rg;
     }
 
-    public String getEstadoCivil() {
+    public EstadoCivil getEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 
@@ -85,5 +89,14 @@ public class Pessoa{
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     
 }

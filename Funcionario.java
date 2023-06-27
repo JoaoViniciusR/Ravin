@@ -2,43 +2,45 @@ import java.sql.Date;
 
 public class Funcionario extends Pessoa{
 
-    private String escolaridade;
-    private String cargo;
+    private Escolaridade escolaridade;
+    private Cargo cargo;
     private String numeroCarteiraT;
     private Date dataAdmissao;
     private Date dataDemissao;
-    
-    public Funcionario(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, String estadoCivil, boolean status, String escolaridade, String cargo, String numeroCarteira, Date dataAdmissao, Date dataDemisssao) {
-        super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, status);
+    private Disponibilidade disponibilidade;
+
+    public Funcionario(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, Escolaridade escolaridade, Cargo cargo, String numeroCarteiraT, Date dataAdmissao, Date dataDemissao, Disponibilidade disponibilidade) {
+        super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, observacao, status);
         this.escolaridade = escolaridade;
         this.cargo = cargo;
-        this.numeroCarteiraT = numeroCarteira;
+        this.numeroCarteiraT = numeroCarteiraT;
         this.dataAdmissao = dataAdmissao;
-        this.dataDemissao = dataDemisssao;
+        this.dataDemissao = dataDemissao;
+        this.disponibilidade = disponibilidade;
     }
 
-    public String getEscolaridade() {
+    public Escolaridade getEscolaridade() {
         return escolaridade;
     }
 
-    public void setEscolaridade(String escolaridade) {
+    public void setEscolaridade(Escolaridade escolaridade) {
         this.escolaridade = escolaridade;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 
-    public String getNumeroCarteiraTrabalho() {
+    public String getNumeroCarteiraT() {
         return numeroCarteiraT;
     }
 
-    public void setNumeroCarteiraTrabalho(String numeroCarteiraTrabalho) {
-        this.numeroCarteiraT = numeroCarteiraTrabalho;
+    public void setNumeroCarteiraT(String numeroCarteiraT) {
+        this.numeroCarteiraT = numeroCarteiraT;
     }
 
     public Date getDataAdmissao() {
@@ -55,5 +57,13 @@ public class Funcionario extends Pessoa{
 
     public void setDataDemissao(Date dataDemissao) {
         this.dataDemissao = dataDemissao;
+    }
+
+    public Disponibilidade getDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(Disponibilidade disponibilidade) {
+        this.disponibilidade = disponibilidade;
     }
 }

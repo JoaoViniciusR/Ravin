@@ -1,49 +1,35 @@
-import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 
 public class Cliente extends Pessoa {
 
-    private String endereco;
-    private String observacao;
+    private String alergia;
+    private boolean vip;
 
-    public Cliente(int id, String nome, String telefone, java.sql.Date dataNascimento, String cpf, String rg, String estadoCivil, boolean status, String endereco, String observacao) {
-        super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, status);
-        this.endereco = endereco;
-        this.observacao = observacao;
-
+    public Cliente(int id, String nome, String telefone, Date dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, String alergia, boolean vip) {
+        super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, observacao, status);
+        this.alergia = alergia;
+        this.vip = vip;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public Cliente() {}
+
+    public String getAlergia() {
+        return alergia;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setAlergia(String alergia) {
+        this.alergia = alergia;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public boolean isVip() {
+        return vip;
     }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
+    public void setVip(boolean vip) {
+        this.vip = vip;
     }
 
-    public boolean eAniversario() {
-
-        Calendar calendarAtual = Calendar.getInstance();
-        Calendar calendarNascimento = Calendar.getInstance();
-
-        calendarAtual.setTime(new Date());
-
-        calendarNascimento.setTime(getDataNascimento());
-
-
-        if (calendarNascimento.get(Calendar.MONTH) == calendarAtual.get(Calendar.MONTH)
-                && calendarNascimento.get(Calendar.DAY_OF_MONTH) == calendarAtual.get(Calendar.DAY_OF_MONTH)) {
-            return true;
-        }
-
-        return false;
+    public boolean eAniversario () {
+        return true;
     }
 }

@@ -4,22 +4,25 @@ import java.sql.Date;
 public class Produto {
     private int id;
     private String nome;
+    private String descricao;
     private String codigo;
     private float precoCusto;
     private float precoVenda;
     private Timestamp tempoPreparo;
     private String observacao;
-    private boolean status;
+    private TipoProduto tipoProduto;
+    private StatusProduto status;
 
-    
-    public Produto(int id, String nome, String codigo, float precoCusto, float precoVenda, Timestamp tempoPreparo, String observacao, boolean status) {
+    public Produto(int id, String nome, String descricao, String codigo, float precoCusto, float precoVenda, Timestamp tempoPreparo, String observacao, TipoProduto tipoProduto, StatusProduto status) {
         this.id = id;
         this.nome = nome;
+        this.descricao = descricao;
         this.codigo = codigo;
         this.precoCusto = precoCusto;
         this.precoVenda = precoVenda;
         this.tempoPreparo = tempoPreparo;
         this.observacao = observacao;
+        this.tipoProduto = tipoProduto;
         this.status = status;
     }
 
@@ -37,6 +40,14 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getCodigo() {
@@ -79,11 +90,19 @@ public class Produto {
         this.observacao = observacao;
     }
 
-    public boolean isStatus() {
+    public TipoProduto getTipoProduto() {
+        return tipoProduto;
+    }
+
+    public void setTipoProduto(TipoProduto tipoProduto) {
+        this.tipoProduto = tipoProduto;
+    }
+
+    public StatusProduto getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(StatusProduto status) {
         this.status = status;
     }
 }

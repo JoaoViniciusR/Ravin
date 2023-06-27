@@ -1,18 +1,21 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Cardapio {
     private int id;
     private String nome;
+    private String descricao;
     private List<Produto> listaProdutosCardapio;
     private String codigo;
+    private CategoriaCardapio categoria;
     private boolean status;
 
-    public Cardapio(int id, String nome, String codigo, boolean status) {
+    public Cardapio(int id, String nome, String descricao, List<Produto> listaProdutosCardapio, String codigo, CategoriaCardapio categoria, boolean status) {
         this.id = id;
         this.nome = nome;
-        this.listaProdutosCardapio = new ArrayList<>();
+        this.descricao = descricao;
+        this.listaProdutosCardapio = listaProdutosCardapio;
         this.codigo = codigo;
+        this.categoria = categoria;
         this.status = status;
     }
 
@@ -32,6 +35,14 @@ public class Cardapio {
         this.nome = nome;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public List<Produto> getListaProdutosCardapio() {
         return listaProdutosCardapio;
     }
@@ -48,6 +59,14 @@ public class Cardapio {
         this.codigo = codigo;
     }
 
+    public CategoriaCardapio getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaCardapio categoria) {
+        this.categoria = categoria;
+    }
+
     public boolean isStatus() {
         return status;
     }
@@ -55,11 +74,5 @@ public class Cardapio {
     public void setStatus(boolean status) {
         this.status = status;
     }
-    public void adicionarProduto(Produto produto) {
-        listaProdutosCardapio.add(produto);
-    }
 
-    public void deletarProduto(Produto produto) {
-        listaProdutosCardapio.remove(produto);
-    }
 }

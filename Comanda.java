@@ -1,28 +1,31 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Comanda {
     private int id;
     private Mesa mesa;
     private Cliente cliente;
-    private List<ComandaProduto> listaProdutos;
-    private String statusComanda;
-    private String codigoComanda; 
+    private List<Pedido> produtosPedidos;
+    private StatusComanda statusComanda;
+    private String codigo;
     private float valorTotal;
 
-    public Comanda(int id, Mesa mesa, Cliente cliente, String codigoComanda) {
+    public Comanda(int id, Mesa mesa, Cliente cliente, List<Pedido> produtosPedidos, StatusComanda statusComanda, String codigo, float valorTotal) {
         this.id = id;
         this.mesa = mesa;
         this.cliente = cliente;
-        this.listaProdutos = new ArrayList<>();
-        this.statusComanda = "EM ABERTO";
-        this.codigoComanda = codigoComanda;
-        this.valorTotal = 0.0f;
+        this.produtosPedidos = produtosPedidos;
+        this.statusComanda = statusComanda;
+        this.codigo = codigo;
+        this.valorTotal = valorTotal;
     }
-    public Comanda(){}
+    public Comanda() {}
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Mesa getMesa() {
@@ -41,49 +44,61 @@ public class Comanda {
         this.cliente = cliente;
     }
 
-    public List<ComandaProduto> getListaProdutos() {
-        return listaProdutos;
+    public List<Pedido> getProdutosPedidos() {
+        return produtosPedidos;
     }
 
-    public String getStatusComanda() {
+    public void setProdutosPedidos(List<Pedido> produtosPedidos) {
+        this.produtosPedidos = produtosPedidos;
+    }
+
+    public StatusComanda getStatusComanda() {
         return statusComanda;
     }
 
-    public void setStatusComanda(String statusComanda) {
+    public void setStatusComanda(StatusComanda statusComanda) {
         this.statusComanda = statusComanda;
     }
 
-    public String getCodigoComanda() {
-        return codigoComanda;
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public float getValorTotal() {
         return valorTotal;
     }
 
-    public void adicionarProduto(ComandaProduto produto) {
-        listaProdutos.add(produto);
+    public void setValorTotal(float valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public void adicionarPedido(Pedido produto) {
+        produtosPedidos.add(produto);
         calcularTotalPagar();
     }
 
-    public void removerProduto(ComandaProduto produto) {
-        listaProdutos.remove(produto);
+    public void removerPedido(String codigo) {
+        produtosPedidos.remove(codigo);
         calcularTotalPagar();
     }
 
     public boolean fecharComanda() {
-        if (listaProdutos.isEmpty()) {
+        if (produtosPedidos.isEmpty()) {
             return false;
         }
 
-        statusComanda = "FECHADA";
+        statusComanda = StatusComanda.FECHADA;
         return true;
     }
 
     public float calcularTotalPagar() {
         float total = 0.0f;
-        for (ComandaProduto produto : listaProdutos) {
-            total += produto.getProduto().getPrecoVenda() * produto.getQuantidadeProduto();
+        for (Pedido produto : produtosPedidos) {
+            total += produto.getProduto().getPrecoVenda() * produto.getQuantidade();
         }
 
         if (cliente.eAniversario()) {
