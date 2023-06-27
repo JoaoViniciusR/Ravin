@@ -1,25 +1,29 @@
-import java.sql.Date;
+package Modelos;
+
+import Enumeradores.EstadoCivil;
+
+import java.util.Date;
 
 public class Pessoa{
 
     private int id;
     private String nome;
+    private String endereco;
     private String telefone;
-    private String dataNascimento;
+    private Date dataNascimento;
     private String cpf;
-    private String rg;
     private EstadoCivil estadoCivil;
     private String observacao;
     private boolean status;
 
 
-    public Pessoa(int id, String nome, String telefone, String dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status) {
+    public Pessoa(int id, String nome,String endereco, String telefone, Date dataNascimento, String cpf, EstadoCivil estadoCivil, String observacao, boolean status) {
         this.id = id;
         this.nome = nome;
+        this.endereco = endereco;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
-        this.rg = rg;
         this.estadoCivil = estadoCivil;
         this.observacao = observacao;
         this.status = status;
@@ -50,11 +54,11 @@ public class Pessoa{
         this.telefone = telefone;
     }
 
-    public String getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -64,14 +68,6 @@ public class Pessoa{
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
     }
 
     public EstadoCivil getEstadoCivil() {

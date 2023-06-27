@@ -1,12 +1,17 @@
-import java.sql.Date;
+package Modelos;
+
+import Modelos.Pessoa;
+import Enumeradores.EstadoCivil;
+
+import java.util.Date;
 
 public class Cliente extends Pessoa {
 
     private String alergia;
     private boolean vip;
 
-    public Cliente(int id, String nome, String telefone, String dataNascimento, String cpf, String rg, EstadoCivil estadoCivil, String observacao, boolean status, String alergia, boolean vip) {
-        super(id, nome, telefone, dataNascimento, cpf, rg, estadoCivil, observacao, status);
+    public Cliente(int id, String nome, String endereco, String telefone, Date dataNascimento, String cpf, EstadoCivil estadoCivil, String observacao, boolean status, String alergia, boolean vip) {
+        super(id, nome, endereco, telefone, dataNascimento, cpf, estadoCivil, observacao, status);
         this.alergia = alergia;
         this.vip = vip;
     }

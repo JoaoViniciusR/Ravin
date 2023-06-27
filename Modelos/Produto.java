@@ -1,6 +1,8 @@
-//import java.security.Timestamp;
+package Modelos;//import java.security.Timestamp;
 import java.sql.Timestamp;
 import java.sql.Date;
+import Enumeradores.*;
+
 
 public class Produto {
     private int id;

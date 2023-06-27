@@ -1,4 +1,9 @@
+package Modelos;
+
+import Modelos.Produto;
+
 import java.util.List;
+import Enumeradores.CategoriaCardapio;
 
 public class Cardapio {
     private int id;

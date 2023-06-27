@@ -1,3 +1,5 @@
+package Enumeradores;
+
 public enum StatusPreparo {
     PRONTO,
     AGUARDANDO,

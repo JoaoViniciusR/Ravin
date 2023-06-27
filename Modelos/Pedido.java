@@ -1,3 +1,8 @@
+package Modelos;
+
+import Modelos.Produto;
+import Enumeradores.*;
+
 import java.sql.Timestamp;
 
 public class Pedido {

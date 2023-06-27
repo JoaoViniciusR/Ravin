@@ -1,3 +1,5 @@
+package Enumeradores;
+
 public enum Escolaridade {
     ENSINO_FUNDAMENTAL,
     ENSINO_MEDIO,

@@ -1,3 +1,10 @@
+package Modelos;
+
+import Modelos.Cliente;
+import Modelos.Mesa;
+import Enumeradores.*;
+
+
 import java.util.List;
 
 public class Comanda {
@@ -8,6 +15,7 @@ public class Comanda {
     private StatusComanda statusComanda;
     private String codigo;
     private float valorTotal;
+    private String observacao;
 
     public Comanda(int id, Mesa mesa, Cliente cliente, List<Pedido> produtosPedidos, StatusComanda statusComanda, String codigo, float valorTotal) {
         this.id = id;
@@ -19,6 +27,14 @@ public class Comanda {
         this.valorTotal = valorTotal;
     }
     public Comanda() {}
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 
     public int getId() {
         return id;

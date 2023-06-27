@@ -1,4 +1,7 @@
+package Modelos;
+
 import java.util.List;
+import Enumeradores.*;
 
 public class Mesa {
     private int id;
@@ -89,9 +92,9 @@ public class Mesa {
 
     public void adicionarCliente(Cliente cliente) {
         //if (taVaga()) {
-        //    comanda = new Comanda();
+        //    comanda = new Modelos.Comanda();
         //    statusMesa = "Ocupada";
-        //    System.out.println("Cliente " + cliente.getNome() + " adicionado à mesa " + nome);
+        //    System.out.println("Modelos.Cliente " + cliente.getNome() + " adicionado à mesa " + nome);
         //} else {
         //    System.out.println("A mesa " + nome + " não está disponível para adicionar o cliente.");
         //}
@@ -101,7 +104,7 @@ public class Mesa {
         //if (statusMesa.equals("Ocupada") && comanda != null && comanda.getCliente().equals(cliente)) {
         //    comanda = null;
         //    statusMesa = "Livre";
-        //    System.out.println("Cliente " + cliente.getNome() + " removido da mesa " + nome);
+        //    System.out.println("Modelos.Cliente " + cliente.getNome() + " removido da mesa " + nome);
         //} else {
         //    System.out.println("A mesa " + nome + " não possui cliente para remover.");
         //}
@@ -111,7 +114,7 @@ public class Mesa {
         //if (statusMesa.equals("Ocupada") && comanda != null) {
 
             //comanda.adicionarProduto(produto);
-            //System.out.println("Pedido realizado com sucesso na mesa " + nome);
+            //System.out.println("Modelos.Pedido realizado com sucesso na mesa " + nome);
         //} else {
         //    System.out.println("A mesa " + nome + " não possui cliente para fazer o pedido.");
         //}
