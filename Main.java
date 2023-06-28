@@ -42,8 +42,6 @@ public class Main {
                     break;
             }
         }
-
-        
     }
 
     public static Pessoa cadastrarPessoa() {
@@ -163,6 +161,21 @@ public class Main {
         sb.append("7- Sair");
 
         return sb.toString();
+    }
+
+    public static String montarSubMenuGeral(String modulo) {
+        StringBuilder st = new StringBuilder();
+        st.append("================= Gestão de ");
+        st.append(modulo);
+        st.append("================== /n");
+        st.append("1- Cadastrar /n");
+        st.append("2- Alterar/n");
+        st.append("3- Excluir/n");
+        st.append("4- Consultar/n");
+        st.append("5- Listar todos/n");
+        st.append("6- Voltar");
+
+        return st.toString();
     }
 
 }
