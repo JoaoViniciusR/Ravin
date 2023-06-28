@@ -1,5 +1,5 @@
 
-//import java.security.Timestamp;
+
 import Enumeradores.*;
 import Modelos.*;
 import Utilidades.*;
@@ -22,7 +22,7 @@ public class Main {
 
             switch (opcaoSelecionado){
                 case 1:
-
+                    JOptionPane.showInputDialog(montarMenuFuncionarios());
                     break;
                 case 2:
                     break;
@@ -151,13 +151,13 @@ public class Main {
 
     public static String montarMenuPrincipal() {
         StringBuilder sb = new StringBuilder();
-        sb.append("=-=-=-=-=-=-=-=-=-=-=-= RAVIN =-=-=-=-=-=-=-=-=-=-=-= /n");
+        sb.append("=-=-=-=-=-=-=-=-=-=-=-= RAVIN =-=-=-=-=-=-=-=-=-=-=-= \n");
         sb.append("1- Funcionário ");
-        sb.append("2- Cliente/n");
-        sb.append("3- Produto/n");
-        sb.append("4- Cardápio/n");
-        sb.append("5- Mesa/n");
-        sb.append("6- Pedido/n");
+        sb.append("2- Cliente\n");
+        sb.append("3- Produto\n");
+        sb.append("4- Cardápio\n");
+        sb.append("5- Mesa\n");
+        sb.append("6- Pedido\n");
         sb.append("7- Sair");
 
         return sb.toString();
@@ -167,15 +167,26 @@ public class Main {
         StringBuilder st = new StringBuilder();
         st.append("================= Gestão de ");
         st.append(modulo);
-        st.append("================== /n");
-        st.append("1- Cadastrar /n");
-        st.append("2- Alterar/n");
-        st.append("3- Excluir/n");
-        st.append("4- Consultar/n");
-        st.append("5- Listar todos/n");
-        st.append("6- Voltar");
+        st.append("================== \n");
+        st.append("1- Cadastrar \n");
+        st.append("2- Alterar\n");
+        st.append("3- Excluir\n");
+        st.append("4- Consultar\n");
+        st.append("5- Listar todos\n");
 
         return st.toString();
+    }
+
+    public static String montarMenuFuncionarios() {
+        String subMenuGeral = montarSubMenuGeral("Funcionários");
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(subMenuGeral);
+        sb.append("\n");
+        sb.append("6- Consultar Garçons Disponíveis \n");
+        sb.append("7- Voltar");
+
+        return sb.toString();
     }
 
 }
