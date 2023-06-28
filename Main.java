@@ -22,7 +22,8 @@ public class Main {
 
             switch (opcaoSelecionado){
                 case 1:
-                    JOptionPane.showInputDialog(montarMenuFuncionarios());
+                    int opcao = Integer.parseInt(JOptionPane.showInputDialog(montarMenuFuncionarios()));
+                    operacaoFuncionario(opcao);
                     break;
                 case 2:
                     break;
@@ -43,6 +44,7 @@ public class Main {
             }
         }
     }
+
 
     public static Pessoa cadastrarPessoa() {
 
@@ -189,4 +191,25 @@ public class Main {
         return sb.toString();
     }
 
+    private static void operacaoFuncionario(int opcao) {
+        switch (opcao){
+            case 1:
+                cadastrarFuncionario();
+                break;
+            case 2:
+
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            default:
+                break;
+        }
+
+    }
 }
