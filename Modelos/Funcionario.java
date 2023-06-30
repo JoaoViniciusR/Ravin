@@ -72,4 +72,16 @@ public class Funcionario extends Pessoa {
     public void setDisponibilidade(Disponibilidade disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "escolaridade=" + escolaridade +
+                ", cargo=" + cargo +
+                ", numeroCarteiraT='" + numeroCarteiraT + '\'' +
+                ", dataAdmissao='" + dataAdmissao + '\'' +
+                ", dataDemissao='" + dataDemissao + '\'' +
+                ", disponibilidade=" + disponibilidade +
+                '}';
+    }
 }
