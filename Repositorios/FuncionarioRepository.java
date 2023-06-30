@@ -10,15 +10,18 @@ public class FuncionarioRepository {
     private List<Funcionario> funcionarios;
 
     public FuncionarioRepository() {
-        funcionarios = new ArrayList<>();
+        funcionarios = new ArrayList<Funcionario>();
     }
 
-    public void salvar(Funcionario entidade){
-        for(Funcionario funcionario : funcionarios) {
-            if(funcionario.getId() == entidade.getId()){
-                funcionario = entidade;
-            }
+    public void salvar(Funcionario entidade) {
+        Funcionario funcionario = buscarPorId(entidade.getId());
+
+        if(funcionario == null) {
+            funcionarios.add(entidade);
+        } else {
+            funcionario = entidade;
         }
+
     }
 
     public List<Funcionario> listarTodos() {
@@ -29,23 +32,28 @@ public class FuncionarioRepository {
         funcionarios.remove(entidade);
     }
 
-    public Funcionario buscarProIdFuncionario(int id) {
+    public Funcionario buscarPorId(int id) {
         Funcionario funcionarioBuscado = null;
-        for(Funcionario funcionario : funcionarios) {
-            if(funcionario.getId() == id){
+        for (Funcionario funcionario : funcionarios) {
+            if (funcionario.getId() == id)
                 funcionarioBuscado = funcionario;
-            }
         }
+
         return funcionarioBuscado;
     }
 
-    public void deletarPeloId(int id) {
-        Funcionario funcionarioBuscado = null;
-        for(Funcionario funcionario : funcionarios) {
-            if(funcionario.getId() == id){
-                funcionarioBuscado = funcionario;
-            }
-        }
-        funcionarios.remove(funcionarioBuscado);
+    public void deletarPeloId(Funcionario funcionario) {
+        funcionarios.remove(funcionario);
     }
+
+    public int contar() {
+        return funcionarios.size();
+    }
+
+    public Funcionario buscarPorNome(String nome) {
+        return null;
+    }
+
+
+
 }
